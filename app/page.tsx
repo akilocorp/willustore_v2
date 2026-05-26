@@ -1,7 +1,8 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import StoryPlayer from "@/components/StoryPlayer";
-import Comparison from "@/components/Comparison";
+import Problem from "@/components/Problem";
+import Security from "@/components/Security";
 import CTABand from "@/components/CTABand";
 import Footer from "@/components/Footer";
 
@@ -12,7 +13,8 @@ export default function Home() {
       <main>
         <Hero />
         <StoryPlayer />
-        <Comparison />
+        <Problem />
+        <Security />
         <CTABand />
       </main>
       <Footer />

@@ -2,8 +2,8 @@ const cols: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Product",
     links: [
-      { label: "How it works", href: "#story" },
-      { label: "Pricing", href: "#" },
+      { label: "How it works", href: "/#story" },
+      { label: "Security", href: "/#security" },
       { label: "Docs", href: "#" },
       { label: "Status", href: "#" },
     ],
@@ -11,7 +11,7 @@ const cols: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Network",
     links: [
-      { label: "Run a node", href: "/run-a-node" },
+      { label: "Run a node", href: "#" },
       { label: "Earnings", href: "#" },
       { label: "Coverage map", href: "#" },
       { label: "Whitepaper", href: "#" },
@@ -20,10 +20,10 @@ const cols: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Company",
     links: [
-      { label: "About", href: "#" },
-      { label: "Careers", href: "#" },
+      { label: "About", href: "/about" },
+      { label: "Team", href: "/team" },
+      { label: "Contact", href: "/contact" },
       { label: "Press", href: "#" },
-      { label: "Contact", href: "#" },
     ],
   },
 ];
@@ -33,7 +33,6 @@ export default function Footer() {
     <footer className="paper-grain bg-cream-warm">
       <div className="mx-auto max-w-[1240px] px-6 py-16 md:py-20">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
-          {/* Brand column */}
           <div className="col-span-2 md:col-span-1">
             <div className="inline-flex items-center gap-2 text-[15px] font-medium tracking-tight text-ink">
               <span className="relative inline-flex h-2 w-2 items-center justify-center">
@@ -43,7 +42,7 @@ export default function Footer() {
               <span>willustore</span>
             </div>
             <p className="mt-4 max-w-[28ch] text-[14px] leading-[1.5] text-muted">
-              AI memory that lives on phones in datacenters, not in datacenters.
+              AI memory that lives on phones, not in datacenters.
             </p>
           </div>
 
