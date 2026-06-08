@@ -1,45 +1,37 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
-import "./globals.css";
-import LenisProvider from "@/lib/lenis";
+import type { Metadata } from "next"
+import { Manrope } from "next/font/google"
+import "./globals.css"
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
-const geist = Geist({
-  variable: "--font-geist",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  display: "swap",
-});
+})
 
 export const metadata: Metadata = {
-  title: "Willustore — AI memory that lives on phones, not in datacenters",
+  title: "Willustore — Decentralized Vector Storage for the AI Age",
   description:
-    "Decentralized vector storage for any AI model. Companies get a free RAG platform. Phone owners earn for sharing space they aren't using. Never pay for the product. Only the storage.",
-};
+    "Willustore enables organizations to store AI data securely using decentralized storage — leveraging unused space on user devices with military-grade encryption.",
+  keywords: "decentralized storage, vector database, AI data, HNSW, secure storage, university AI, enterprise AI",
+  openGraph: {
+    title: "Willustore — Decentralized Vector Storage",
+    description: "Store AI data securely. Distributed across devices. Encrypted. Cost-effective.",
+    type: "website",
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${geist.variable} ${geistMono.variable} ${instrument.variable}`}
-    >
-      <body className="min-h-full bg-cream text-ink">
-        <LenisProvider>{children}</LenisProvider>
+    <html lang="en">
+      <body className={`${manrope.variable} bg-midnight text-text-primary font-body antialiased`}>
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
-  );
+  )
 }
