@@ -1,3 +1,4 @@
+// Willustore homepage
 import Link from 'next/link'
 import {
   ArrowRight, Download, Shield, Database, Zap, Lock,
