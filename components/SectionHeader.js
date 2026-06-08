@@ -12,7 +12,7 @@ export default function SectionHeader({ badge, title, subtitle, center = true, c
         {title}
       </h2>
       {subtitle && (
-        <p className={`text-text-secondary text-lg leading-relaxed ${center ? 'max-w-2xl mx-auto' : 'max-w-xl'}`}>
+        <p className={`text-text-secondary text-lg leading-relaxed ${center ? 'text-center max-w-2xl mx-auto' : 'max-w-xl'}`}>
           {subtitle}
         </p>
       )}

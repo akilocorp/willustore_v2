@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export function Button({ href, onClick = undefined, children, variant = 'primary', className = '', size = 'md', ...props }) {
-  const base = 'inline-flex items-center justify-center gap-2 font-600 rounded-lg transition-all duration-200 cursor-pointer border-0 outline-none'
+  const base = 'inline-flex items-center justify-center gap-2 font-600 rounded-lg transition-all duration-200 cursor-pointer outline-none'
 
   const sizes = {
     sm: 'px-4 py-2 text-sm',
@@ -10,10 +10,10 @@ export function Button({ href, onClick = undefined, children, variant = 'primary
   }
 
   const variants = {
-    primary: 'bg-accent text-white hover:bg-accent-glow hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5 active:translate-y-0',
-    secondary: 'border border-accent/40 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent/70 hover:-translate-y-0.5',
-    ghost: 'text-text-secondary hover:text-accent hover:bg-accent/5',
-    purple: 'bg-accent-warm text-white hover:bg-accent hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5',
+    primary: 'border-0 bg-accent text-white hover:bg-accent-glow hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5 active:translate-y-0',
+    secondary: 'border border-accent/40 text-accent bg-accent/5 hover:bg-accent/10 hover:border-accent/60 hover:-translate-y-0.5',
+    ghost: 'border-0 text-text-secondary hover:text-accent hover:bg-accent/5',
+    purple: 'border-0 bg-accent-warm text-white hover:bg-accent hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5',
   }
 
   const classes = `${base} ${sizes[size]} ${variants[variant]} ${className}`
