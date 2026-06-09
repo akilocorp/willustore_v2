@@ -49,5 +49,7 @@ jobs:
             npm ci
             npm run build
             pm2 delete willustore 2>/dev/null || true
-            pm2 start npm --name willustore --cwd "/var/www/willustore/haftoms design" -- start
+            # The site uses Next.js `output: 'export'` (static), so `next start`
+            # does NOT work — serve the generated `out/` folder statically instead.
+            pm2 serve "/var/www/willustore/haftoms design/out" 3000 --name willustore
             pm2 save
