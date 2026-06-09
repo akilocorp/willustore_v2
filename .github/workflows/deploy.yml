@@ -18,12 +18,17 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: 'haftoms design/package-lock.json'
 
+      # NOTE: only the "haftoms design" folder is the real site. Everything
+      # else in this repo is legacy/irrelevant and must not be built or hosted.
       - name: Install dependencies
         run: npm ci
+        working-directory: 'haftoms design'
 
       - name: Build
         run: npm run build
+        working-directory: 'haftoms design'
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
@@ -38,11 +43,11 @@ jobs:
             else
               rm -rf /var/www/willustore
               git clone https://github.com/akilocorp/willustore_v2.git /var/www/willustore
-              cd /var/www/willustore
             fi
-            cd /var/www/willustore
+            # Only the "haftoms design" folder is the real site — build & run it.
+            cd "/var/www/willustore/haftoms design"
             npm ci
             npm run build
             pm2 delete willustore 2>/dev/null || true
-            pm2 start npm --name willustore --cwd /var/www/willustore -- start
+            pm2 start npm --name willustore --cwd "/var/www/willustore/haftoms design" -- start
             pm2 save
